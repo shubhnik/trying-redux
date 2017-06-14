@@ -13,7 +13,7 @@ import {
 
 export default class List extends Component{
     render(){
-        //alert('props' + JSON.stringify(this.props))
+        //alert('props' + JSON.stringify(Object.keys(this.props)))
         const { todos , todoCompleted } = this.props;
         return(
             <View style={{flex:10,backgroundColor:'yellow'}} >
@@ -22,10 +22,16 @@ export default class List extends Component{
                         return(
                             <TouchableOpacity
                                 key={index}
-                                style={{height:50,backgroundColor:e.completed?'pink':'rgb(123,223,178)'}}
-                                onPress={ () => todoCompleted(index) }
+                                style={{height:50,backgroundColor:e.completed?'pink':'rgb(123,223,178)',flexDirection:'row'}}
+                                onPress={ () => todoCompleted(e.id) }
                             >
-                                <Text>{e.text}</Text>
+                                <Text style={{flex:7}}>{e.text}</Text>
+                                <TouchableOpacity
+                                    style={{flex:1,backgroundColor:'steelblue',justifyContent:'center',alignItems:'center'}}
+                                    onPress={()=>this.props.navigator.push({name:'Scene2'})}
+                                >
+                                    <Text>Touch</Text>
+                                </TouchableOpacity>
                             </TouchableOpacity>
                         )
                     })

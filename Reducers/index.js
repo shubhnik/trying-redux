@@ -10,8 +10,8 @@ const reducer = ( state = initialState , action ) => {
         case "ADD_TODO":
             return { ... state , todos: [ ...state.todos , { text: action.text, id: action.id , completed:action.completed} ] };
         case "TODO_COMPLETED":
-            return { ...state , todos: state.todos.map((object,index) => {
-                        if(index==action.id){
+            return { ...state , todos: state.todos.map((object) => {
+                        if(object.id==action.id){
                             object.completed = !object.completed
                         }
                 return object

@@ -15,6 +15,7 @@ import {connect} from 'react-redux'
 import {setVisibility} from '../Actions'
 export default class FilterOption extends Component{
     render(){
+        //alert("stringify props" + JSON.stringify(this.props))
         return(
             <View style={{flex:1,backgroundColor:'cyan',flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>
                 <Text

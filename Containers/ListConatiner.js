@@ -7,8 +7,8 @@ import Input from '../Components/Input'
 import {addTodo,todoCompleted} from '../Actions'
 import List from '../Components/List'
 
-const mapStateToProps = (state) =>{
-    const todos = state.todos.filter((object) => {
+const mapStateToProps = (state,ownProps) =>{
+    let todos = state.todos.filter((object) => {
         if(state.visibilityFilter == "SHOW_COMPLETED"){
             if(object.completed == true ){
                 return object

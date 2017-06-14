@@ -15,6 +15,7 @@ import {
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+import Root from './Root'
 import App from './App'
 import reducer from './Reducers'
 
@@ -24,7 +25,7 @@ export default class redux1 extends Component {
   render() {
     return (
         <Provider store={store}>
-          <App />
+          <Root />
         </Provider>
     );
   }
