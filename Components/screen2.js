@@ -16,7 +16,7 @@ import { connect } from 'react-redux'
 class Screen2 extends Component {
 
     componentDidMount(){
-        alert(this.props.store)
+        alert(JSON.stringify((this.props.todos)))
     }
 
     render(){
@@ -28,4 +28,8 @@ class Screen2 extends Component {
     }
 }
 
-export default connect()(Screen2)
+mapStateToProps = (state) => {
+    return state
+}
+
+export default connect(mapStateToProps,null)(Screen2)
